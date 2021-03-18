@@ -62,7 +62,10 @@
           @keydown.up.prevent="pointerBackward()"
           @keypress.enter.prevent.stop.self="addPointerElement($event)"
           @keydown.delete.stop="removeLastElement()"
-          class="multiselect__input"
+          :class="
+            typeof inputClass === 'array' ?
+                ['multiselect__input', ...formClass] :
+                formClass"
         />
         <span
           v-if="isSingleLabelVisible"
@@ -289,6 +292,10 @@ export default {
     tabindex: {
       type: Number,
       default: 0
+    },
+    inputClass: {
+      type: [String, Array],
+      default: []
     }
   },
   computed: {
@@ -420,7 +427,6 @@ fieldset[disabled] .multiselect {
 .multiselect__input,
 .multiselect__single {
   font-family: inherit;
-  font-size: 16px;
   touch-action: manipulation;
 }
 
@@ -523,7 +529,6 @@ fieldset[disabled] .multiselect {
   border-radius: 5px;
   border: 1px solid #e8e8e8;
   background: #fff;
-  font-size: 14px;
 }
 
 .multiselect__tag {
@@ -561,7 +566,6 @@ fieldset[disabled] .multiselect {
 .multiselect__tag-icon:after {
   content: "×";
   color: #266d4d;
-  font-size: 14px;
 }
 
 .multiselect__tag-icon:focus,
@@ -692,7 +696,6 @@ fieldset[disabled] .multiselect {
   line-height: 40px;
   padding-right: 12px;
   padding-left: 20px;
-  font-size: 13px;
 }
 
 .multiselect__option--highlight {
