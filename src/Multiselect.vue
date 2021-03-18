@@ -63,7 +63,7 @@
           @keypress.enter.prevent.stop.self="addPointerElement($event)"
           @keydown.delete.stop="removeLastElement()"
           :class="
-            typeof inputClass === 'array' ?
+            typeof inputClass === 'object' ?
                 ['multiselect__input', ...formClass] :
                 formClass"
         />
