@@ -295,7 +295,9 @@ export default {
     },
     inputClass: {
       type: [String, Array],
-      default: []
+      default: function () {
+        return []
+      }
     }
   },
   computed: {
