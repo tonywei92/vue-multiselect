@@ -63,9 +63,9 @@
           @keypress.enter.prevent.stop.self="addPointerElement($event)"
           @keydown.delete.stop="removeLastElement()"
           :class="
-            typeof Array.isArray(formClass) ?
-                ['multiselect__input', ...formClass] :
-                formClass"
+            typeof Array.isArray(inputClass) ?
+                ['multiselect__input', ...inputClass] :
+                inputClass"
         />
         <span
           v-if="isSingleLabelVisible"
