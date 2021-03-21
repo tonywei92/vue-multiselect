@@ -38,10 +38,11 @@ const webpackConfig = merge(base, {
     }),
     new ExtractTextPlugin({
       filename: 'vue-multiselect.min.css'
-    }),
-    new OptimizeCssAssetsPlugin({
-      cssProcessor: require('cssnano')
     })
+    // ,
+    // new OptimizeCssAssetsPlugin({
+    //   cssProcessor: require('cssnano')
+    // })
   ]
 })
 
