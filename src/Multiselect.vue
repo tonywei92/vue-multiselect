@@ -13,7 +13,9 @@
         <div @mousedown.prevent.stop="toggle()" class="multiselect__select"></div>
       </slot>
       <slot name="clear" :search="search"></slot>
-      <div ref="tags" class="multiselect__tags">
+      <div ref="tags" :class="typeof Array.isArray(tagsClass) ?
+                ['multiselect__tags', ...tagsClass] :
+                tagsClass">
         <slot
           name="selection"
           :search="search"
@@ -303,6 +305,12 @@ export default {
       }
     },
     placeholderClass: {
+      type: [String, Array],
+      default: function () {
+        return []
+      }
+    },
+    tagsClass: {
       type: [String, Array],
       default: function () {
         return []
