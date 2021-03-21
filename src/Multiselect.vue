@@ -508,7 +508,6 @@ fieldset[disabled] .multiselect {
   width: calc(100%);
   transition: border 0.1s ease;
   box-sizing: border-box;
-  margin-bottom: 8px;
   vertical-align: top;
 }
 
@@ -542,11 +541,11 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__tags {
+  display: flex;
+  align-items: center;
   min-height: 40px;
   display: block;
-  padding-top: 8px;
   padding-right: 40px;
-  padding-bottom: 0px;
   padding-left: 8px;
   border-radius: 5px;
   border: 1px solid #e8e8e8;
@@ -648,8 +647,6 @@ fieldset[disabled] .multiselect {
 .multiselect__placeholder {
   color: #adadad;
   display: inline-block;
-  margin-bottom: 10px;
-  padding-top: 2px;
 }
 
 .multiselect--active .multiselect__placeholder {
