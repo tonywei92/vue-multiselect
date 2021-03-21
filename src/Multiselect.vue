@@ -78,7 +78,10 @@
         </span>
         <span
           v-if="isPlaceholderVisible"
-          class="multiselect__placeholder"
+          :class="
+            typeof Array.isArray(placeholderClass) ?
+                ['multiselect__placeholder', ...placeholderClass] :
+                placeholderClass"
           @mousedown.prevent="toggle"
         >
           <slot name="placeholder">
@@ -294,6 +297,12 @@ export default {
       default: 0
     },
     inputClass: {
+      type: [String, Array],
+      default: function () {
+        return []
+      }
+    },
+    placeholderClass: {
       type: [String, Array],
       default: function () {
         return []
