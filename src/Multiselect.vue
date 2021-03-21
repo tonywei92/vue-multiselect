@@ -533,7 +533,6 @@ fieldset[disabled] .multiselect {
 
 .multiselect__single {
   padding-left: 5px;
-  margin-bottom: 8px;
 }
 
 .multiselect__tags-wrap {
