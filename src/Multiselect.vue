@@ -544,7 +544,6 @@ fieldset[disabled] .multiselect {
   display: flex;
   align-items: center;
   min-height: 40px;
-  display: block;
   padding-right: 40px;
   padding-left: 8px;
   border-radius: 5px;

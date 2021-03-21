@@ -1,6 +1,6 @@
 {
   "name": "vue-multiselect-x",
-  "version": "2.1.18",
+  "version": "2.1.19",
   "private": false,
   "types": "index.d.ts",
   "scripts": {
