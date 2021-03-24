@@ -37,9 +37,13 @@ export default {
     }
   },
   methods: {
-    optionHighlight (index, option) {
+    optionHighlight (index, option, altClass) {
+      let highlightClass = 'multiselect__option--highlight'
+      if (altClass) {
+        highlightClass = altClass
+      }
       return {
-        'multiselect__option--highlight': index === this.pointer && this.showPointer,
+        [highlightClass]: index === this.pointer && this.showPointer,
         'multiselect__option--selected': this.isSelected(option)
       }
     },

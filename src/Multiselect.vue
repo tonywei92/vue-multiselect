@@ -112,7 +112,7 @@
               <li class="multiselect__element" v-for="(option, index) of filteredOptions" :key="index">
                 <span
                   v-if="!(option && (option.$isLabel || option.$isDisabled))"
-                  :class="optionHighlight(index, option)"
+                  :class="optionHighlight(index, option, highlightClass)"
                   @click.stop="select(option)"
                   @mouseenter.self="pointerSet(index)"
                   :data-select="option && option.isTag ? tagPlaceholder : selectLabelText"
@@ -311,6 +311,12 @@ export default {
       }
     },
     tagsClass: {
+      type: [String, Array],
+      default: function () {
+        return []
+      }
+    },
+    highlightClass: {
       type: [String, Array],
       default: function () {
         return []
